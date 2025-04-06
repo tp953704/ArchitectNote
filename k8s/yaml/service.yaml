@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: my-service
+spec: 
+  type: NodePort // (clusterIp, loadBalancer)
+  ports:
+    - targetPort: 80
+      port: 80 //(*可以多端口映射 ex *port:80,90..)
+      nodePort: 30008 //(30000-32767) 沒有的話會自動設定
+      selector: //(對應pod的label)
+        app: my-app 
+        type: frontend

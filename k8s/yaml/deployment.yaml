@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+  labels:
+    app: my-app
+    type: frontend
+spec: #rc 的內容
+  template:
+    metadata:
+      name: my-app-pod
+      labels:
+        app: myapp
+        type: frontend
+    spec: 
+        containers:
+          - name: nginx-container
+            image: nginx
+  replicas: 3
+  selector: # ReplicaSet多了這屬性
+    matchLabels:
+      type: frontend
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25% # 指定了可以同时创建的新 Pod 的最大数量，以百分比表示。在这里，设置为 25%
+      maxUnavailable: 25% # 指定了在更新期间可以不可用的 Pod 的最大数量，以百分比表示。在这里，设置为 25%。

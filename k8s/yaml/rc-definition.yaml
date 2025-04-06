@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ReplicationController #ReplicationController or ReplicaSet
+metadata:
+  name: myapp-rc
+  labels:
+    app: my-app
+    type: frontend
+spec: #rc 的內容
+  template:
+    metadata:
+      name: my-app-pod
+      labels:
+        app: myapp-pod
+        type: frontend
+    spec: 
+        containers:
+          - name: nginx-container
+            image: nginx-container
+  replicas: 3
+  # selector: ReplicaSet多了這屬性
+    # matchLabels"
+      # type: frontend

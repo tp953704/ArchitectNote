@@ -1,0 +1,30 @@
+apiVersion: kubescheduler.config.k8s.io/v1alpha1
+kind: KubeSchedulerConfiguration
+profiles:
+- schedulerName: custom-scheduler
+leaderElection:
+  leaderElect: true
+  resourceNamespace: namespace
+  resourceName: my-schedule
+
+
+
+
+
+
+
+
+
+
+
+
+# ------------- pod 設定 並從event 建立 pod 的 scheduler
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: example-pod
+# spec:
+#   schedulerName: custom-scheduler // 要寫要用的schedulerName
+#   containers:
+#   - name: nginx-container
+#     image: nginx:latest

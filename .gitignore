@@ -1,2 +1,4 @@
 ai/pytorch/lessoncode/*
 **/notrace/**
+ai/LangChainTrainings/**/.deepeval
+.DS_Store

@@ -1,4 +1,5 @@
 ai/pytorch/lessoncode/*
 **/notrace/**
 ai/LangChainTrainings/**/.deepeval
+ai/LangChainTrainings/**/.deepeval_telemetry.txt
 .DS_Store

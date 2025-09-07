@@ -3,3 +3,5 @@ ai/pytorch/lessoncode/*
 ai/LangChainTrainings/**/.deepeval
 ai/LangChainTrainings/**/.deepeval_telemetry.txt
 .DS_Store
+.DS_Store
+ai/LangChainTrainings/.DS_Store
